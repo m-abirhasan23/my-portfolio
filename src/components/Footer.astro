@@ -1,13 +1,55 @@
 ---
-const today = new Date();
+import { SITE_TITLE } from "../consts";
+
+// import footerImg from "../../public/footer.png";
+import footerImg from "../../public/footer.png";
 ---
 
 <footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+  <img src={footerImg} alt=" a illustration with image gif " />
+  <p>{SITE_TITLE}. All rights reserved</p>
+  <nav class="secondary-nav">
+    <a href="/about">About</a>
+    <a href="/works">works</a>
+    <a href="/">recommendation</a>
+  </nav>
 </footer>
 <style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
+  footer {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0rem auto;
+    width: 650px;
+    min-height: 70vh;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    width: 70%;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+  p {
+    font-family: var(--font-primary);
+    font-size: var(--fs-regular);
+  }
+
+  .secondary-nav {
+    display: flex;
+    justify-content: center;
+    width: 550px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  a {
+    text-decoration: none;
+    color: hsl(var(--clr-white));
+    font-size: var(--fs-xs);
+    transition: color 300ms ease;
+  }
+  a:hover {
+    color: hsl(var(--clr-accent));
+  }
 </style>

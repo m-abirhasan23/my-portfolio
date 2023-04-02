@@ -1,0 +1,23 @@
+---
+// layouts
+import HeadLayout from "./HeadLayout.astro";
+// assets
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+// components
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <HeadLayout title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <slot>Default Text</slot>
+    </main>
+    <Footer />
+  </body>
+</html>
