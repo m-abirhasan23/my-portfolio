@@ -1,5 +1,6 @@
 ---
 import { navData } from "../data/data.js";
+import Hamburger from "./Hamburger.astro";
 // import HeaderLink from "./HeaderLink.astro";
 ---
 
@@ -10,12 +11,7 @@ import { navData } from "../data/data.js";
       {navData.map((link) => <a href={`"#"${link.path}`}>{link.name}</a>)}
     </nav>
     <div class="menu-btn acive">
-      <!-- <div class="openMenu">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-      <div class="closeMenu">
-        <i class="fa-solid fa-xmark"></i>
-      </div> -->
+      <Hamburger />
     </div>
   </div>
 </header>
@@ -91,26 +87,6 @@ import { navData } from "../data/data.js";
 
   .menu-btn {
     display: none;
-    background-color: hsl(var(--clr-white));
-    height: 5px;
-    width: 45px;
-    position: relative;
-  }
-  .menu-btn::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    background-color: hsl(var(--clr-white));
-    top: 15px;
-    height: 5px;
-  }
-  .menu-btn::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    background-color: hsl(var(--clr-white));
-    top: -15px;
-    height: 5px;
   }
 
   @media (max-width: 600px) {
