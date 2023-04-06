@@ -1,0 +1,27 @@
+---
+const { title } = Astro.props;
+const { text, subtext } = title;
+console.log(text, subtext);
+---
+
+<div>
+  <h3>{text}</h3>
+  <p>{subtext}</p>
+</div>
+
+<style>
+  div {
+    text-align: center;
+    padding-block: 2em;
+  }
+  h3 {
+    font-size: var(--fs-xl);
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    color: hsl(var(--clr-accent), 0.8);
+  }
+  p {
+    font-family: var(--font-primary);
+    text-transform: capitalize;
+  }
+</style>
