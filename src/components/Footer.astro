@@ -1,8 +1,6 @@
 ---
+import footerImg from "../assets/footer.png";
 import { SITE_TITLE } from "../consts";
-
-// import footerImg from "../../public/footer.png";
-import footerImg from "../../public/footer.png";
 ---
 
 <footer>
@@ -21,14 +19,19 @@ import footerImg from "../../public/footer.png";
     margin: 0rem auto;
     width: 650px;
     min-height: 70vh;
-    justify-content: flex-end;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    place-items: center;
+    -webkit-animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1)
+      both;
+    animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    padding-bottom: 0;
   }
+
   img {
     width: 70%;
     margin: 0 auto;
     object-fit: cover;
+    z-index: -1;
   }
   p {
     font-family: var(--font-primary);
@@ -49,7 +52,27 @@ import footerImg from "../../public/footer.png";
     font-size: var(--fs-xs);
     transition: color 300ms ease;
   }
-  a:hover {
+  a :is(:hover, :focus) {
     color: hsl(var(--clr-accent));
+  }
+  @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
   }
 </style>

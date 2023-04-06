@@ -1,0 +1,206 @@
+/**
+ * @license
+ *
+ * Font Family: Panchang
+ * Designed by: Barbara Bigosinska, Hitesh Malaviya
+ * URL: https://www.fontshare.com/fonts/panchang
+ * © 2023 Indian Type Foundry
+ *
+ * Font Styles:
+ * Panchang Variable(Variable font)
+ * Panchang Extralight
+ * Panchang Light
+ * Panchang Regular
+ * Panchang Medium
+ * Panchang Semibold
+ * Panchang Bold
+ * Panchang Extrabold         
+ *
+*/
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 800.0;
+*
+* available axes:
+
+* 'wght' (range from 200.0 to 800.0)
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Panchang-Variable";
+  src: url("../fonts/Panchang-Variable.woff2") format("woff2"),
+    url("../fonts/Panchang-Variable.woff") format("woff"),
+    url("../fonts/Panchang-Variable.ttf") format("truetype");
+  font-weight: 200 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Panchang-Extralight";
+  src: url("../fonts/Panchang-Extralight.woff2") format("woff2"),
+    url("../fonts/Panchang-Extralight.woff") format("woff"),
+    url("../fonts/Panchang-Extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Panchang-Light";
+  src: url("../fonts/Panchang-Light.woff2") format("woff2"),
+    url("../fonts/Panchang-Light.woff") format("woff"),
+    url("../fonts/Panchang-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Panchang-Regular";
+  src: url("../fonts/Panchang-Regular.woff2") format("woff2"),
+    url("../fonts/Panchang-Regular.woff") format("woff"),
+    url("../fonts/Panchang-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Panchang-Medium";
+  src: url("../fonts/Panchang-Medium.woff2") format("woff2"),
+    url("../fonts/Panchang-Medium.woff") format("woff"),
+    url("../fonts/Panchang-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Panchang-Semibold";
+  src: url("../fonts/Panchang-Semibold.woff2") format("woff2"),
+    url("../fonts/Panchang-Semibold.woff") format("woff"),
+    url("../fonts/Panchang-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Panchang-Bold";
+  src: url("../fonts/Panchang-Bold.woff2") format("woff2"),
+    url("../fonts/Panchang-Bold.woff") format("woff"),
+    url("../fonts/Panchang-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Panchang-Extrabold";
+  src: url("../fonts/Panchang-Extrabold.woff2") format("woff2"),
+    url("../fonts/Panchang-Extrabold.woff") format("woff"),
+    url("../fonts/Panchang-Extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  --font-primary: "Syne", sans-serif;
+  --font-secondary: "Panchang-Variable";
+
+  /* colors  */
+  --clr-primary: 224, 45%, 6%;
+  --clr-accent: 38, 63%, 56%;
+  --clr-white: 0, 0%, 100%;
+  --clr-black: 0, 0%, 0%;
+  /* font size  */
+  --fs-xs: 14px;
+  --fs-sm: 16px;
+  --fs-regular: 18px;
+  --fs-semi: 22px;
+  --fs-md: 24px;
+  --fs-lg: 36px;
+  --fs-xl: 46px;
+  --fs-2xl: 64px;
+  /* border radius  */
+  --radius: 10px;
+  --radius1: 20px;
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: hsl(var(--clr-primary));
+  display: grid;
+  place-items: center;
+  padding: 0;
+  margin: 0;
+  color: hsl(var(--clr-white));
+  font-size: 16px;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,93 @@
+---
+import portfolioImg from "../assets/portfolio-img.png";
+import span from "../assets/waving-hand.png";
+import Button from "./Button.astro";
+---
+
+<section class="hero" aria-label="Hero Section" id="hero">
+  <div class="container">
+    <div class="hero-info">
+      <h1 class="main-title">Hi,There , I’m <span>abir hasan</span></h1>
+      <p class="my-description">
+        I like to build scalable frontend products with great UI experiences
+        with some the best modern web frameworks & tools
+      </p>
+      <Button type={"button"} text={"Say hello"} span={span} />
+    </div>
+    <div class="hero-img">
+      <img src={portfolioImg} alt="my portfolio image" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    width: 100%;
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+  }
+  .container {
+    display: flex;
+    width: 90%;
+    margin-inline: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .hero-info {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 70vh;
+    gap: 1rem;
+  }
+  .main-title {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-lg);
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  .main-title > span {
+    background: -webkit-linear-gradient(45deg, #f3ec78, #af4261, #5f6caf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 5s linear infinite;
+  }
+  @keyframes animate-gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .my-description {
+    width: 90%;
+    font-family: var(--font-primary);
+    font-size: var(--fs-md);
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      margin-top: 2rem;
+    }
+    .container {
+      flex-direction: column-reverse;
+    }
+    .hero-info,
+    .hero-img {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .hero-img > img {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+</style>
