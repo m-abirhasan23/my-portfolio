@@ -1,8 +1,9 @@
 ---
-import profile from "../assets/Github Profile 1.png";
-import Button from "../assets/components/Button.astro";
-import Title from "../assets/components/Title.astro";
+import profile from "../assets/Photo.png";
+
 import span from "../assets/recruitment.png";
+import Button from "../components/Button.astro";
+import Title from "../components/Title.astro";
 const title = {
   text: "about me",
   subtext: "my introduction",
@@ -18,19 +19,13 @@ const title = {
     <div class="about-info">
       <h3>i’m a <span>frontend developer</span> from chattogram bangladesh</h3>
       <p>
-        I'm a front-end developer with a genuine interest in solving customer
-        problems, who has strong knowledge of modern frameworks and tools for
-        building high-performance user-friendly products. As a front-end
-        developer, I bring a combination of technical expertise, creativity, and
-        problem-solving skills to every project. My passion lies in using modern
-        frameworks and tools to build high-performance and user-friendly
-        products that meet the unique needs of customers. I believe that the key
-        to success in this field is to remain agile, adaptable, and constantly
-        learning. With a deep understanding of the latest industry trends and
-        standards, I am well-equipped to develop robust and efficient front-end
-        solutions that exceed expectations. Whether working independently or as
-        part of a team, I am committed to delivering outstanding results that
-        drive business growth and enhance the user experience.
+        I'm a front-end developer with strong technical skills and a passion for
+        solving customer problems. I use modern frameworks and tools to build
+        high-performance, user-friendly products that meet unique customer
+        needs. I stay current with industry trends and remain adaptable to
+        change. I excel as both an independent worker and a team player,
+        delivering exceptional results that drive business growth and enhance
+        the user experience.
       </p>
       <Button type="button" text="Checkout My Resume" span={span} />
     </div>
@@ -45,18 +40,19 @@ const title = {
     flex-wrap: wrap;
     width: 90%;
     margin-inline: auto;
+    margin-block: 2em;
   }
   .about-img {
-    width: 40%;
+    width: 35%;
   }
   .about-img > img {
-    width: 70%;
+    width: 100%;
     border: 10px solid hsl(var(--clr-white), 0.5);
     border-radius: 20px;
     margin-inline: auto;
   }
   .about-info {
-    width: 55%;
+    width: 60%;
   }
   .about-info h3 {
     font-size: var(--fs-md);
@@ -75,6 +71,8 @@ const title = {
 
   @media (max-width: 600px) {
     .container {
+      width: 90%;
+      margin-inline: auto;
       justify-content: center;
       gap: 4rem;
     }

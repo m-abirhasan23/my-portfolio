@@ -1,0 +1,60 @@
+---
+import serviceImg from "../assets/service.png";
+import ServiceItem from "../components/ServiceItem.astro";
+import Title from "../components/Title.astro";
+import { serviceData } from "../data/data";
+const title = {
+  text: "my expertise",
+  subtext: "- An overview of my Technical Skills -",
+};
+---
+
+<section class="service" id="service" aria-label="Service Section">
+  <Title {title} />
+  <div class="container">
+    <div class="service-info">
+      {serviceData.map((item) => <ServiceItem {item} />)}
+    </div>
+    <div class="serice-image">
+      <img src={serviceImg} alt="service images" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    display: flex;
+    width: 90%;
+    margin-inline: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .serice-image {
+    width: 30%;
+    position: relative;
+  }
+
+  .serice-image > img {
+    width: 100%;
+    border: 1px;
+  }
+  .service-info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    gap: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      gap: 2rem;
+    }
+    .serice-image {
+      width: 100%;
+    }
+    .service-info {
+      width: 100%;
+    }
+  }
+</style>

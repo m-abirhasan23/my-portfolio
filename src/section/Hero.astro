@@ -1,7 +1,7 @@
 ---
-import Button from "../assets/components/Button.astro";
 import portfolioImg from "../assets/portfolio-img.png";
 import span from "../assets/waving-hand.png";
+import Button from "../components/Button.astro";
 ---
 
 <section class="hero" aria-label="Hero Section" id="hero">
@@ -35,7 +35,7 @@ import span from "../assets/waving-hand.png";
     flex-wrap: wrap;
   }
   .hero-info {
-    width: 70%;
+    width: 65%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -76,7 +76,7 @@ import span from "../assets/waving-hand.png";
   .my-description {
     width: 90%;
     font-family: var(--font-primary);
-    font-size: var(--fs-md);
+    font-size: var(--fs-regular);
   }
 
   @media (max-width: 600px) {
