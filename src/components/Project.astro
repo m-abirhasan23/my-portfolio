@@ -1,0 +1,98 @@
+---
+const project = Astro.props;
+const { name, img, description, live, github } = project.project;
+---
+
+<figure>
+  <div class="project-info">
+    <figcaption>{name}</figcaption>
+    <p>{description}</p>
+    <div class="button-group">
+      <a href="http://" target="_blank" rel="noopener noreferrer"
+        >VISIT WEBSITE</a
+      >
+      <a href="http://" target="_blank" rel="noopener noreferrer">CHECK CODE</a>
+    </div>
+  </div>
+  <div class="project-img">
+    <img src={img} alt={name} />
+  </div>
+</figure>
+
+<style>
+  figure {
+    display: flex;
+    width: 90%;
+    margin-inline: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-block: 4em;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    border: 1px solid hsla(var(--clr-accent), 0.5);
+    padding: 0 1.2rem;
+    border-radius: 20px;
+    min-height: 80vh;
+  }
+  .project-info {
+    width: 50%;
+  }
+  .project-img {
+    width: 45%;
+    cursor: pointer;
+  }
+
+  figcaption {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-lg);
+    font-weight: bold;
+    color: hsla(var(--clr-accent), 1);
+    text-transform: uppercase;
+  }
+  p {
+    font-size: var(--fs-semi);
+    font-family: var(--font-primary);
+    line-height: 1.2;
+    color: hsla(var(--clr-white), 0.7);
+    padding-block: 0.5rem;
+  }
+  .button-group {
+    margin-top: 1.5rem;
+  }
+
+  a {
+    background: hsl(var(--clr-accent));
+    border: 1px solid hsl(var(--clr-accent));
+    font-family: var(--font-secondary) !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    color: hsla(var(--clr-white), 1);
+    padding: 11px 22px;
+    border-radius: 10px;
+    transition: opacity 300ms ease;
+    opacity: 0.6;
+  }
+  a:last-child {
+    background-color: transparent;
+  }
+  a:hover {
+    opacity: 1;
+  }
+
+  @media (max-width: 600px) {
+    figure {
+      flex-direction: column-reverse;
+      padding: 2rem;
+    }
+    figcaption {
+      font-size: var(--fs-semi);
+    }
+    .project-img,
+    .project-info {
+      width: 100%;
+      padding: 1em 0;
+    }
+  }
+</style>
