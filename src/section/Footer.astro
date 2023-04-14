@@ -1,11 +1,10 @@
 ---
 import footerImg from "../assets/footer.png";
-import { SITE_TITLE } from "../consts";
 ---
 
 <footer>
   <img src={footerImg} alt=" a illustration with image gif " />
-  <p>{SITE_TITLE}. All rights reserved</p>
+  <p>{"Abir Hasan ⚡ — Frontend Engineer 🤖"}. All rights reserved</p>
   <nav class="secondary-nav">
     <a href="/about">About</a>
     <a href="/works">works</a>
@@ -52,7 +51,7 @@ import { SITE_TITLE } from "../consts";
     font-size: var(--fs-xs);
     transition: color 300ms ease;
   }
-  a :is(:hover, :focus) {
+  a:is(:hover, :focus) {
     color: hsl(var(--clr-accent));
   }
   @-webkit-keyframes scale-up-center {

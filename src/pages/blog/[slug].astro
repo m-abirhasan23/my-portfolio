@@ -1,5 +1,7 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
+import MainLayouts from "../../layouts/MainLayouts.astro";
+import { formattedDate } from "../../utils/utils";
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection("blog");
@@ -14,6 +16,74 @@ interface Props {
   post: CollectionEntry<"blog">;
 }
 const { post } = Astro.props;
+const { Content } = await post.render();
+console.log(post.body);
 ---
 
-<h1>{post.data.title}</h1>
+<MainLayouts title={post.data.title}>
+  <article>
+    <div class="content-header">
+      <a href="" class="tags">{post.data.tags[1]}</a>
+      <h2 class="articel-title">{post.data.title}</h2>
+      <p class="author-info">
+        By <span>{post.data.author}</span>
+        <span>{formattedDate(post.data.date)}</span>
+      </p>
+    </div>
+    <img src={post.data.image.url} alt="" />
+
+    <div class="content">
+      <Content />
+    </div>
+  </article>
+</MainLayouts>
+
+<style>
+  article {
+    width: 90%;
+    margin-inline: auto;
+
+    font-family: var(--font-primary);
+    min-height: 80vh;
+    margin-block: 8rem 0;
+  }
+  .tags {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: hsl(var(--clr-accent));
+    padding: 5px;
+    border-radius: 5px;
+    font-size: var(--fs-regular);
+    opacity: 0.8;
+    transition: opacity 400ms;
+    display: none;
+  }
+  .tags:is(:hover, :focus) {
+    opacity: 1;
+    outline-color: hsl(var(--clr-accent));
+  }
+  .articel-title {
+    text-transform: uppercase;
+    font-size: var(--fs-lg);
+    width: 100%;
+    margin-inline: auto;
+  }
+  .author-info {
+    width: 100%;
+    margin-inline: auto;
+    text-transform: capitalize;
+  }
+  img {
+    width: 90%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    max-height: 70vh;
+    border-radius: 10px;
+    margin-inline: auto;
+    margin: 2rem 0;
+  }
+  .content {
+    width: 100%;
+    margin-inline: auto;
+  }
+</style>

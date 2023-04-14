@@ -4,11 +4,11 @@ export const navData = [
         name: "Home"
     },
     {
-        path: "/about",
+        path: "#about",
         name: "About"
     },
     {
-        path: "/work",
+        path: "#projects",
         name: "Work"
     },
     {
@@ -16,7 +16,7 @@ export const navData = [
         name: "Journal"
     },
     {
-        path: "/contact",
+        path: "#contact",
         name: "contact me"
     },
 ]

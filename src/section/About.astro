@@ -8,12 +8,9 @@ const title = {
 };
 ---
 
-<section id="about-me" class="about-me" aria-label="About Me">
+<section id="about" class="about-me" aria-label="About Me">
   <Title {title} />
   <div class="container">
-    <!-- <div class="about-img">
-      <img src={profile} alt="abir pictures " />
-    </div> -->
     <div class="about-info">
       <h3>
         I enjoy creating <span>simple</span> & <span>visually</span> appealing products.
@@ -76,9 +73,10 @@ const title = {
     width: 90%;
   }
   .about-info h3 {
-    font-size: var(--fs-lg);
+    font-size: var(--fs-md);
     font-family: var(--font-secondary);
     text-transform: uppercase;
+    width: 60%;
   }
   .about-info h3 > span {
     color: hsl(var(--clr-accent), 0.8);

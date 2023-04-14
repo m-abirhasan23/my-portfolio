@@ -1,13 +1,13 @@
 ---
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Footer from "../section/Footer.astro";
 import Nav from "../section/Nav.astro";
 import HeadLayout from "./HeadLayout.astro";
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <HeadLayout title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  <HeadLayout title={title} />
   <body>
     <Nav />
 

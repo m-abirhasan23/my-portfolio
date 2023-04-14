@@ -1,7 +1,7 @@
 ---
 title: "top Essential Skills for Every Junior Frontend Developer Should Master"
 pubDate: 2022-07-01
-description: "Must-Have Skills for Junior Frontend Devs: A Guide to Essential Expertise for Success"
+description: ""
 author: "abir hasan"
 image:
   url: "https://images.unsplash.com/photo-1623479322729-28b25c16b011?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
@@ -9,7 +9,7 @@ image:
 tags: ["webdevelopment ", "frontend", "juniorskills"]
 ---
 
-# Top Essential Skills for Every Junior Frontend Developer Should Master
+# Must-Have Skills for Junior Frontend Devs: A Guide to Essential Expertise for Success
 
 As a junior frontend developer, you are just starting on your journey to becoming a proficient developer. To become a successful frontend developer, you need to master some key skills that will help you excel in your career. Here are some of the essential skills that you should focus on as a junior frontend developer.
 

@@ -30,10 +30,15 @@ const { name, img, description, live, github } = project.project;
     justify-content: center;
     align-items: center;
     gap: 5%;
-    border: 1px solid hsla(var(--clr-accent), 0.5);
+    border: 1px solid hsla(var(--clr-accent), 0.3);
     padding: 0 1.2rem;
     border-radius: 20px;
     min-height: 80vh;
+    transition: border 400ms;
+    cursor: pointer;
+  }
+  figure:hover {
+    border: 1px solid hsla(var(--clr-accent), 0.9);
   }
   .project-info {
     width: 50%;

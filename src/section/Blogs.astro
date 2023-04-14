@@ -17,28 +17,30 @@ const blogPosts = await getCollection("blog");
     {
       blogPosts.map((post) => (
         <article>
-          <img
-            src={post.data.image.url}
-            alt={post.data.description}
-            class="article-img"
-          />
-          <div class="info">
-            <p>
-              #{post.data.tags[0]} <span>#{post.data.tags[1]}</span>
-            </p>
-            <span>{formattedDate(post.data.pubDate)}</span>
-          </div>
-          <h2 class="blog-title">{post.data.title}</h2>
-
-          <div class="blog-footer">
-            <div>
-              <img src={authorImg} alt="image of abir hasan" />
-              <span>{post.data.author}</span>
+          <a href={`/blog/${post.slug}`}>
+            <img
+              src={post.data.image.url}
+              alt={post.data.description}
+              class="article-img"
+            />
+            <div class="info">
+              <p>
+                #{post.data.tags[0]} <span>#{post.data.tags[1]}</span>
+              </p>
+              <span>{formattedDate(post.data.pubDate)}</span>
             </div>
-            <a href={`/blog/${post.slug}`} class="read-btn">
-              Read Post <i class="fa-solid fa-arrow-right" />
-            </a>
-          </div>
+            <h2 class="blog-title">{post.data.title}</h2>
+
+            <div class="blog-footer">
+              <div class="author-info">
+                <img src={authorImg} alt="image of abir hasan" />
+                <span class="author-name">{post.data.author}</span>
+              </div>
+              <a href={`/blog/${post.slug}`} class="read-btn">
+                Read Post <i class="fa-solid fa-arrow-right" />
+              </a>
+            </div>
+          </a>
         </article>
       ))
     }
@@ -46,6 +48,10 @@ const blogPosts = await getCollection("blog");
 </section>
 
 <style>
+  .blog-section {
+    width: 90%;
+    margin-inline: auto;
+  }
   .blogs-container {
     display: flex;
     justify-content: center;
@@ -53,13 +59,21 @@ const blogPosts = await getCollection("blog");
     gap: 2rem;
     flex-wrap: wrap;
   }
+  .blogs-container > article > a {
+    text-decoration: none;
+    color: currentColor;
+  }
   article {
-    width: 30%;
+    width: 31%;
     border: 1px solid hsla(var(--clr-accent), 0.3);
     padding: 1rem;
     border-radius: 10px;
     cursor: pointer;
     overflow: hidden;
+    transition: border 300ms ease;
+  }
+  article:hover {
+    border: 1px solid hsla(var(--clr-accent), 0.9);
   }
   article:hover .article-img {
     scale: 1.01;
@@ -84,12 +98,15 @@ const blogPosts = await getCollection("blog");
     display: flex;
     justify-content: space-between;
   }
-  .blog-footer > div {
+  .author-info {
     display: flex;
     align-items: center;
     font-family: var(--font-primary);
     text-transform: capitalize;
     gap: 0.5rem;
+  }
+  .author-name {
+    text-decoration: none;
   }
   .read-btn {
     text-decoration: none;
@@ -112,5 +129,10 @@ const blogPosts = await getCollection("blog");
     overflow: hidden;
     scale: 0.95;
     transition: scale 400ms ease;
+  }
+  @media (max-width: 600px) {
+    article {
+      width: 90%;
+    }
   }
 </style>
