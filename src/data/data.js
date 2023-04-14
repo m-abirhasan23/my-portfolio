@@ -12,7 +12,7 @@ export const navData = [
         name: "Work"
     },
     {
-        path: "/journal",
+        path: "/blog",
         name: "Journal"
     },
     {

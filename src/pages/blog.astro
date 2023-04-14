@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import MainLayouts from "../layouts/MainLayouts.astro";
+const blogPosts = await getCollection("blog");
+console.log(blogPosts);
+---
+
+<MainLayouts>
+  <h1>This is my blog page</h1>
+  <p>This is where I will post about my journey learning Astro.</p>
+  <ul>
+    {
+      blogPosts.map((post) => (
+        <div>
+          <h2>{post.data.title}</h2>
+          <a href={`/blog/${post.slug}`}>Read Post</a>
+        </div>
+      ))
+    }
+  </ul>
+</MainLayouts>

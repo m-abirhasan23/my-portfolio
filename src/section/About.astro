@@ -1,32 +1,47 @@
 ---
-import profile from "../assets/Photo.png";
-
 import span from "../assets/recruitment.png";
 import Button from "../components/Button.astro";
 import Title from "../components/Title.astro";
 const title = {
   text: "about me",
-  subtext: "my introduction",
+  subtext: "-my introduction-",
 };
 ---
 
 <section id="about-me" class="about-me" aria-label="About Me">
   <Title {title} />
   <div class="container">
-    <div class="about-img">
+    <!-- <div class="about-img">
       <img src={profile} alt="abir pictures " />
-    </div>
+    </div> -->
     <div class="about-info">
-      <h3>i’m a <span>frontend developer</span> from chattogram bangladesh</h3>
-      <p>
-        I'm a front-end developer with strong technical skills and a passion for
-        solving customer problems. I use modern frameworks and tools to build
-        high-performance, user-friendly products that meet unique customer
-        needs. I stay current with industry trends and remain adaptable to
-        change. I excel as both an independent worker and a team player,
-        delivering exceptional results that drive business growth and enhance
-        the user experience.
-      </p>
+      <h3>
+        I enjoy creating <span>simple</span> & <span>visually</span> appealing products.
+      </h3>
+      <div class="info">
+        <p class="first">
+          Hello my name is abir hasan, I like to build scalable frontend
+          products with great user experiences with some the best modern web
+          frameworks I’m a front-end developer who possesses a genuine passion
+          for addressing customer pain points. My expertise lies in utilizing
+          modern frameworks and tools to create high-performance and
+          user-friendly products that cater to specific customer needs.
+        </p>
+        <p class="seconad">
+          I am a front-end developer who possesses a genuine passion for
+          addressing customer pain points. My expertise lies in utilizing modern
+          frameworks and tools to create high-performance and user-friendly
+          products that cater to specific customer needs. In my opinion, success
+          in this industry is largely dependent on remaining agile, adaptable,
+          and consistently up-to-date with emerging trends and standards.
+          Drawing on my comprehensive knowledge of the latest technologies, I am
+          able to design and implement robust front-end solutions that surpass
+          expectations in terms of efficiency and effectiveness. I work
+          diligently, both independently and as part of a team, to produce
+          exceptional outcomes that boost business growth and enhance the user
+          experience.
+        </p>
+      </div>
       <Button type="button" text="Checkout My Resume" span={span} />
     </div>
   </div>
@@ -56,17 +71,12 @@ const title = {
     content: "";
     inset: 0;
   }
-  .about-img > img {
-    width: 100%;
-    border: 5px solid hsl(var(--clr-accent), 0.9);
-    border-radius: 20px;
-    margin-inline: auto;
-  }
+
   .about-info {
-    width: 60%;
+    width: 90%;
   }
   .about-info h3 {
-    font-size: var(--fs-md);
+    font-size: var(--fs-lg);
     font-family: var(--font-secondary);
     text-transform: uppercase;
   }
@@ -74,12 +84,12 @@ const title = {
     color: hsl(var(--clr-accent), 0.8);
     text-decoration: underline;
   }
-  .about-info p {
-    font-family: var(--font-primary);
-    margin-block: 1em;
-    font-size: var(--fs-regular);
-  }
 
+  .info > p {
+    font-family: var(--font-primary);
+    font-size: var(--fs-semi);
+    margin-block: 1em;
+  }
   @media (max-width: 600px) {
     .container {
       width: 90%;

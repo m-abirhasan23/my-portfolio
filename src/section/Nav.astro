@@ -7,7 +7,7 @@ import { navData } from "../data/data.js";
   <div class="container">
     <div class="logo">Abir Hasan</div>
     <nav class="navbar">
-      {navData.map((link) => <a href={`"#"${link.path}`}>{link.name}</a>)}
+      {navData.map((link) => <a href={link.path}>{link.name}</a>)}
     </nav>
     <div class="menu-btn acive">
       <Hamburger />

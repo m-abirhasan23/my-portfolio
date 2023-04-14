@@ -1,0 +1,116 @@
+---
+import authorImg from "../assets/author.png";
+import Title from "../components/Title.astro";
+const title = {
+  text: "see my latest writing",
+  subtext: "- An overview of my writing Skills -",
+};
+
+import { getCollection } from "astro:content";
+import { formattedDate } from "../utils/utils";
+const blogPosts = await getCollection("blog");
+---
+
+<section class="blog-section" id="blog-section" aria-label="Blog Sections">
+  <Title title={title} />
+  <div class="blogs-container">
+    {
+      blogPosts.map((post) => (
+        <article>
+          <img
+            src={post.data.image.url}
+            alt={post.data.description}
+            class="article-img"
+          />
+          <div class="info">
+            <p>
+              #{post.data.tags[0]} <span>#{post.data.tags[1]}</span>
+            </p>
+            <span>{formattedDate(post.data.pubDate)}</span>
+          </div>
+          <h2 class="blog-title">{post.data.title}</h2>
+
+          <div class="blog-footer">
+            <div>
+              <img src={authorImg} alt="image of abir hasan" />
+              <span>{post.data.author}</span>
+            </div>
+            <a href={`/blog/${post.slug}`} class="read-btn">
+              Read Post <i class="fa-solid fa-arrow-right" />
+            </a>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .blogs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  article {
+    width: 30%;
+    border: 1px solid hsla(var(--clr-accent), 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  article:hover .article-img {
+    scale: 1.01;
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    padding: 1rem;
+    font-family: var(--font-primary);
+    color: hsla(var(--clr-accent), 0.7);
+  }
+
+  .blog-title {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 0.3rem 1rem;
+  }
+  .blog-footer {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .blog-footer > div {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-primary);
+    text-transform: capitalize;
+    gap: 0.5rem;
+  }
+  .read-btn {
+    text-decoration: none;
+    font-family: var(--font-primary);
+    color: hsla(var(--clr-accent), 0.5);
+    border: 1px solid hsla(var(--clr-accent), 0.3);
+    padding: 5px;
+    border-radius: 5px;
+    transition: color 300ms, border 350ms ease-in;
+  }
+  .read-btn:is(:hover, :focus) {
+    color: hsla(var(--clr-accent), 1);
+    border: 1px solid hsla(var(--clr-accent), 1);
+    outline: none;
+  }
+  .article-img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    overflow: hidden;
+    scale: 0.95;
+    transition: scale 400ms ease;
+  }
+</style>
