@@ -8,10 +8,8 @@ const { name, img, description, live, github } = project.project;
     <figcaption>{name}</figcaption>
     <p>{description}</p>
     <div class="button-group">
-      <a href="http://" target="_blank" rel="noopener noreferrer"
-        >VISIT WEBSITE</a
-      >
-      <a href="http://" target="_blank" rel="noopener noreferrer">CHECK CODE</a>
+      <a href={live} target="_blank" rel="noopener noreferrer">VISIT WEBSITE</a>
+      <a href={github} target="_blank" rel="noopener noreferrer">CHECK CODE</a>
     </div>
   </div>
   <div class="project-img">
@@ -33,7 +31,7 @@ const { name, img, description, live, github } = project.project;
     border: 1px solid hsla(var(--clr-accent), 0.3);
     padding: 0 1.2rem;
     border-radius: 20px;
-    min-height: 80vh;
+    min-height: 60vh;
     transition: border 400ms;
     cursor: pointer;
   }
@@ -46,6 +44,9 @@ const { name, img, description, live, github } = project.project;
   .project-img {
     width: 45%;
     cursor: pointer;
+  }
+  .project-img > img {
+    width: 100%;
   }
 
   figcaption {
@@ -76,14 +77,17 @@ const { name, img, description, live, github } = project.project;
     color: hsla(var(--clr-white), 1);
     padding: 11px 22px;
     border-radius: 10px;
-    transition: opacity 300ms ease;
-    opacity: 0.6;
+    transition: background 300ms ease;
   }
   a:last-child {
-    background-color: transparent;
+    border: 1px solid hsl(var(--clr-accent));
+    background: transparent;
+  }
+  a:last-child:hover {
+    background-color: hsl(var(--clr-accent));
   }
   a:hover {
-    opacity: 1;
+    background-color: transparent;
   }
 
   @media (max-width: 600px) {

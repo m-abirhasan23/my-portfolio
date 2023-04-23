@@ -1,0 +1,109 @@
+---
+import { projectsData } from "../data/data";
+---
+
+<section class="recent-work" id="recent-works">
+  <div class="container">
+    <h2>Take a look at my latest <span>portfolio projects</span></h2>
+    <nav id="nav">
+      {
+        projectsData.map((project) => (
+          <a href="#">
+            <span>{project.name}</span>
+            <img src={project.img} />
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</section>
+
+<style>
+  .container {
+    width: 90%;
+    margin-inline: auto;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    margin-block: 10vh;
+  }
+
+  nav > a {
+    color: rgba(255, 255, 255, 0.25);
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(3rem, 7vw, 10rem);
+    font-weight: 300;
+    text-decoration: none;
+    position: relative;
+  }
+
+  nav > a:hover {
+    color: hsl(var(--clr-grey-400));
+  }
+
+  nav > a > span {
+    display: block;
+    border-bottom: 1px solid #6f572f;
+    border-top: 1px solid #6f572f;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    font-family: var(--font-primary);
+    font-weight: 500;
+  }
+
+  /* nav > a:hover > span {
+    border-top-color: hsl(var(--clr-grey-400));
+    border-bottom-color: hsl(var(--clr-grey-400));
+  } */
+
+  nav > a > img {
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: transform 250ms, opacity 250ms;
+    pointer-events: none;
+    width: min(50vw, 500px);
+  }
+
+  nav > a:hover > img {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  h2 {
+    text-align: center;
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    font-size: var(--fs-lg);
+  }
+  span {
+    display: block;
+    color: hsla(var(--clr-accent), 0.5);
+  }
+
+  @media (max-width: 600px) {
+    nav > a > img {
+      position: absolute;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+      transition: transform 250ms, opacity 250ms;
+      pointer-events: none;
+      width: 70%;
+    }
+  }
+</style>
+
+<script type="module">
+  const nav = document.getElementById("nav");
+
+  for (const link of nav.getElementsByTagName("a")) {
+    link.onmousemove = (e) => {
+      const rect = link.getBoundingClientRect(),
+        img = link.querySelector("img");
+
+      img.style.left = `${e.clientX - rect.left}px`;
+      img.style.top = `${e.clientY - rect.top}px`;
+    };
+  }
+</script>

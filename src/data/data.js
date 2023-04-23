@@ -1,14 +1,11 @@
 export const navData = [
-    {
-        path: "/",
-        name: "Home"
-    },
+  
     {
         path: "#about",
         name: "About"
     },
     {
-        path: "#projects",
+        path: "/projects",
         name: "Work"
     },
     {
@@ -75,21 +72,21 @@ export const serviceData = [
 
 export const projectsData=[
     {
-        name:"EATERY RESTUCO CUISINE SHOP",
+        name:"Eatery Restuco",
         img:"/project_01.png",
-        description:"Eatery Restuco Is An Italian Famous Cuisine & Sea Food Restaurant Website Using React Js Italian Famous Cuisine & Sea Food Restaurant Website Using React Js Is A Restaurant Website Built Using React Js. The Idea Behind This Project Was To Build A Website That Is Simple, But At The Same Time Has All The Features Needed By A Modern-Day Restaurant",
-        live:"",
-        github:""
+        description:"Eatery Restuco is An Italian Famous Cuisine & Sea Food Restaurant Website Using React Js Italian Famous Cuisine & Sea Food Restaurant Website Using React Js Is A Restaurant Website Built Using React Js. The Idea Behind This Project Was To Build A Website That Is Simple, But At The Same Time Has All The Features Needed By A Modern-Day Restaurant",
+        live:"https://elara-restaurent.netlify.app/",
+        github:"https://github.com/m-abirhasan23/elara-restaurent"
     },
     {
-        name:"Lovio event planner",
+        name:"Lovio",
         img:"/project_02.png",
         description:"Lovio Storytellers for Events. In This Website We Try Create What Does Lovio Do? Lovio is a storytelling platform for events. With Lovio you can create, share and collaborate on stories based on pictures from any event. The aim is to help you tell the story of your event better and in more detail, so that you can share it with your audience and improve their experience.",
         live:"",
         github:""
     },
     {
-        name:"The V8uge cloth store ",
+        name:"The V8uge ",
         img:"/project_03.png",
         description:"The vision behind v8uge was born when I discovered lemkus, an inspiring cloth store created from the magic of React. This amazing website blew me away with it's smooth scrolling and blazing-fast response time; So I decided to use React, a popular framework for building websites, along with Headless CMS system and Stripe as my payment processor.",
         live:"",

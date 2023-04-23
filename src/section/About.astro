@@ -1,6 +1,5 @@
 ---
-import span from "../assets/recruitment.png";
-import Button from "../components/Button.astro";
+import myImg from "../assets/portfolio.jpg";
 import Title from "../components/Title.astro";
 const title = {
   text: "about me",
@@ -12,34 +11,42 @@ const title = {
   <Title {title} />
   <div class="container">
     <div class="about-info">
-      <h3>
-        I enjoy creating <span>simple</span> & <span>visually</span> appealing products.
-      </h3>
-      <div class="info">
-        <p class="first">
-          Hello my name is abir hasan, I like to build scalable frontend
-          products with great user experiences with some the best modern web
-          frameworks I’m a front-end developer who possesses a genuine passion
-          for addressing customer pain points. My expertise lies in utilizing
-          modern frameworks and tools to create high-performance and
-          user-friendly products that cater to specific customer needs.
-        </p>
-        <p class="seconad">
-          I am a front-end developer who possesses a genuine passion for
-          addressing customer pain points. My expertise lies in utilizing modern
-          frameworks and tools to create high-performance and user-friendly
-          products that cater to specific customer needs. In my opinion, success
-          in this industry is largely dependent on remaining agile, adaptable,
-          and consistently up-to-date with emerging trends and standards.
-          Drawing on my comprehensive knowledge of the latest technologies, I am
-          able to design and implement robust front-end solutions that surpass
-          expectations in terms of efficiency and effectiveness. I work
-          diligently, both independently and as part of a team, to produce
-          exceptional outcomes that boost business growth and enhance the user
-          experience.
-        </p>
+      <h2 class="about-title">a brief introduction about me</h2>
+      <p>
+        Hello my name is abir hasan. I am a front-end developer who possesses a
+        genuine passion for addressing customer pain points. My expertise lies
+        in utilizing modern frameworks and tools to create high-performance and
+        user-friendly products that cater to specific customer needs. In my
+        opinion, success in this industry is largely dependent on remaining
+        agile, adaptable, and consistently up-to-date with emerging trends and
+        standards. Drawing on my comprehensive knowledge of the latest
+        technologies, I am able to design and implement robust front-end
+        solutions that surpass expectations in terms of efficiency and
+        effectiveness. I work diligently, both independently and as part of a
+        team, to produce exceptional outcomes that boost business growth and
+        enhance the user experience.
+      </p>
+      <div class="button-group">
+        <a href="/about" class="about-button"
+          >more about me <span><i class="fa-solid fa-arrow-right"></i></span></a
+        >
+        <a href="" class="social-icons"
+          ><i class="fa-brands fa-square-github"></i></a
+        >
+        <a href="" class="social-icons"><i class="fa-brands fa-linkedin"></i></a
+        >
+        <a
+          href="https://twitter.com/m_abirhasan"
+          target="_blank"
+          class="social-icons"><i class="fa-brands fa-square-twitter"></i></a
+        >
+        <a href="" class="social-icons"
+          ><i class="fa-brands fa-instagram"></i></a
+        >
       </div>
-      <Button type="button" text="Checkout My Resume" span={span} />
+    </div>
+    <div class="about-img">
+      <img src={myImg} alt="" />
     </div>
   </div>
 </section>
@@ -57,43 +64,85 @@ const title = {
   .about-img {
     width: 35%;
     position: relative;
-    z-index: 2;
-  }
-  .about-img::after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: hsla(var(--clr-primary), 0.6);
-    z-index: 5;
-    content: "";
-    inset: 0;
   }
 
   .about-info {
-    width: 90%;
-  }
-  .about-info h3 {
-    font-size: var(--fs-md);
-    font-family: var(--font-secondary);
-    text-transform: uppercase;
     width: 60%;
   }
-  .about-info h3 > span {
-    color: hsl(var(--clr-accent), 0.8);
-    text-decoration: underline;
+  .about-title {
+    font-size: var(--fs-lg);
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    width: 100%;
+    color: hsl(var(--clr-accent));
+  }
+  .about-info p {
+    color: hsl(var(--clr-white), 0.8);
+    font-size: var(--fs-semi);
+    line-height: var(--fs-md);
   }
 
-  .info > p {
-    font-family: var(--font-primary);
-    font-size: var(--fs-semi);
-    margin-block: 1em;
+  .button-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-block: 1rem;
   }
+  .about-button {
+    background: hsl(var(--clr-accent));
+    border: 1px solid hsl(var(--clr-accent));
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+    height: 8vh;
+
+    font-size: var(--fs-regular);
+    font-weight: 600;
+    color: hsl(var(--clr-secondary));
+    border-radius: 5px;
+    transition: background 400ms cubic-bezier(0, 0.2, 0.23, 1.07);
+    text-align: center;
+
+    min-width: 18vw;
+    padding: 11px;
+    cursor: pointer;
+  }
+  .about-button:is(:hover, :focus) {
+    background-color: hsla(var(--clr-accent), 0.7);
+    outline: none;
+  }
+  .social-icons {
+    /* border: 1px solid hsl(var(--clr-accent)); */
+    min-height: 8vh;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+  }
+  .social-icons > span {
+    width: 200px;
+    font-size: 1.5rem;
+  }
+  .fa-brands {
+    font-weight: 400;
+    font-size: var(--fs-2xl);
+    color: hsl(var(--clr-accent));
+  }
+  .about-img > img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
   @media (max-width: 600px) {
     .container {
       width: 90%;
       margin-inline: auto;
       justify-content: center;
       gap: 4rem;
+      flex-direction: column-reverse;
     }
     .about-img {
       width: 100%;

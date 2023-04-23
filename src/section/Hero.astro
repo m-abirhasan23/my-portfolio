@@ -1,23 +1,20 @@
 ---
-// import portfolioImg from "../assets/portfolio-img.png";
-import portfolioImg from "../assets/portfolio.avif";
-import span from "../assets/waving-hand.png";
-import Button from "../components/Button.astro";
+// import portfolioImg from "../assets/portfolio.avif";
 ---
 
 <section class="hero" aria-label="Hero Section" id="hero">
   <div class="container">
-    <div class="hero-info">
-      <h1 class="main-title">Hi,There , I’m <span>abir hasan</span></h1>
-      <p class="my-description">
-        I like to build scalable frontend products with great UI experiences
-        with some the best modern web frameworks & tools
+    <h1 class="headline">who is<span class="name">abir hasan</span></h1>
+    <div class="subtitle">
+      <p class="job-title">
+        A front end developer & designer from Chattogram, Bangladesh.
       </p>
-      <Button type={"button"} text={"Say hello"} span={span} />
+      <span>
+        I like to build scalable frontend products with great user experiences
+        with some the best modern web frameworks</span
+      >
     </div>
-    <div class="hero-img">
-      <img src={portfolioImg} alt="my portfolio image" />
-    </div>
+    <button>Say Hello 👋</button>
   </div>
 </section>
 
@@ -26,75 +23,87 @@ import Button from "../components/Button.astro";
     width: 100%;
     display: grid;
     place-items: center;
+    min-height: 100vh;
+    text-align: center;
   }
   .container {
-    display: flex;
     width: 90%;
     margin-inline: auto;
-    justify-content: space-between;
-    flex-wrap: wrap;
   }
-  .hero-info {
-    width: 65%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 70vh;
-    gap: 1rem;
-  }
-  .hero-img {
-    width: 30%;
-  }
-  .hero-img > img {
-    width: 100%;
-    border-radius: 20px;
-  }
-  .main-title {
-    font-family: var(--font-secondary);
-    font-size: var(--fs-2xl);
+  .headline {
+    font-size: 156px;
     text-transform: uppercase;
-    font-weight: bolder;
+    font-weight: 800;
+    -webkit-text-stroke: 3.5px hsl(var(--clr-accent));
+    color: transparent;
+    line-height: 100%;
   }
-  .main-title > span {
-    background: -webkit-linear-gradient(45deg, #f3ec78, #af4261, #5f6caf);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: animate-gradient 5s linear infinite;
+  .name {
+    display: block;
+    width: 100%;
+    color: hsl(var(--clr-accent));
   }
-  @keyframes animate-gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .my-description {
-    width: 90%;
-    font-family: var(--font-primary);
+  .subtitle {
     font-size: var(--fs-regular);
+    text-transform: capitalize;
+    width: 70%;
+    margin-block: 1rem;
+    margin-inline: auto;
+  }
+  .job-title {
+    font-size: var(--fs-md);
+    text-transform: capitalize;
+    display: inline-block;
+    font-weight: 500;
+    color: hsla(var(--clr-accent), 1);
+    display: block;
+  }
+  button {
+    background: hsl(var(--clr-accent));
+    border: 1px solid hsl(var(--clr-accent));
+    font-family: var(--font-secondary) !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    height: 8vh;
+
+    font-size: var(--fs-md);
+    font-weight: 700 !important;
+    color: hsl(var(--clr-secondary));
+    border-radius: 5px;
+    transition: background 400ms cubic-bezier(0, 0.2, 0.23, 1.07);
+    text-align: center;
+
+    min-width: 18vw;
+    /* padding: 11px; */
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: hsla(var(--clr-accent), 0.7);
   }
 
   @media (max-width: 600px) {
-    .hero {
-      margin-top: 2rem;
-    }
     .container {
-      flex-direction: column-reverse;
-    }
-    .hero-info,
-    .hero-img {
       width: 90%;
-      margin: 0 auto;
+      text-align: center;
     }
-    .hero-img > img {
+    .headline {
+      font-size: 23vw;
+      text-align: center;
+    }
+    .subtitle {
       width: 100%;
-      margin: 0 auto;
+      font-size: var(--fs-md);
+      text-align: center;
+    }
+    .job-title {
+      display: inline;
+      font-size: var(--fs-md);
+    }
+    button {
+      width: 55vw;
+      font-size: var(--fs-md);
+      font-weight: 400;
+      padding: 0;
     }
   }
 </style>
