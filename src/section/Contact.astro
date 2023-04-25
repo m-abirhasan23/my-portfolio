@@ -1,11 +1,17 @@
 ---
+import { Image } from "@astrojs/image/components";
 import footerImg from "../assets/footer.png";
 ---
 
 <section class="contact" id="contact" aria-label="contact form">
   <div class="container">
     <h2>Let’s work together.</h2>
-    <img src={footerImg} alt=" a illustration with image gif " />
+    <Image
+      src={footerImg}
+      alt=" a illustration with image gif "
+      width={600}
+      height={450}
+    />
     <figure class="contact-form">
       <a href="mailto:m.abirhasan23@gmail.com"> m.abirhasan23@gmail.com</a>
       <a href="https://wa.me/+8801866032826"> chat on whatsapp</a>

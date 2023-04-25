@@ -6,6 +6,7 @@ const title = {
   subtext: "- An overview of my writing Skills -",
 };
 
+import { Image } from "@astrojs/image/components";
 import { getCollection } from "astro:content";
 import { formattedDate } from "../utils/utils";
 const blogPosts = await getCollection("blog");
@@ -18,10 +19,14 @@ const blogPosts = await getCollection("blog");
       blogPosts.map((post) => (
         <article>
           <a href={`/blog/${post.slug}`}>
-            <img
+            <Image
               src={post.data.image.url}
               alt={post.data.description}
               class="article-img"
+              width={250}
+              height={250}
+              format={"webp"}
+              fit={"cover"}
             />
             <div class="info">
               <p>
@@ -33,7 +38,13 @@ const blogPosts = await getCollection("blog");
 
             <div class="blog-footer">
               <div class="author-info">
-                <img src={authorImg} alt="image of abir hasan" />
+                <Image
+                  src={authorImg}
+                  alt="image of abir hasan"
+                  width={25}
+                  height={25}
+                  format="webp"
+                />
                 <span class="author-name">{post.data.author}</span>
               </div>
               <a href={`/blog/${post.slug}`} class="read-btn">

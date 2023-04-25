@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 import serviceImg from "../assets/service.png";
 import ServiceItem from "../components/ServiceItem.astro";
 import Title from "../components/Title.astro";
@@ -16,7 +17,15 @@ const title = {
       {serviceData.map((item) => <ServiceItem {item} />)}
     </div>
     <div class="serice-image">
-      <img src={serviceImg} alt="service images" />
+      <Image
+        src={serviceImg}
+        alt="service images"
+        height={450}
+        width={1000}
+        fit="cover"
+        format="avif"
+        class={"serivce-img-main"}
+      />
     </div>
   </div>
 </section>
@@ -31,24 +40,26 @@ const title = {
   }
 
   .serice-image {
-    width: 30%;
+    width: 35%;
     position: relative;
   }
 
-  .serice-image > img {
-    width: 100%;
-    border: 1px;
-  }
   .service-info {
     display: flex;
     flex-wrap: wrap;
     width: 65%;
     gap: 1rem;
   }
-
+  .serice-image-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 350px;
+  }
   @media (max-width: 600px) {
     .container {
       gap: 2rem;
+      flex-direction: column-reverse;
     }
     .serice-image {
       width: 100%;
