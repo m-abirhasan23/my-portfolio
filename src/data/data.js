@@ -1,7 +1,7 @@
 export const navData = [
   
     {
-        path: "#about",
+        path: "/about",
         name: "About"
     },
     {
@@ -92,4 +92,20 @@ export const projectsData=[
         live:"",
         github:""
     }
+]
+
+
+export const service=[
+    {
+        name:"Design",
+        info:"With a solid track record in designing websites and apps, I deliver strong and user-friendly digital designs. Solid company branding is the foundation of any successful website."
+    },
+    {
+        name:"Development",
+        info:"I build scalable websites from scratch that fit seamlessly with design. My focus is on micro animations, transitions and interaction. For content management I use Kirby CMS."
+    },
+    {
+        name:"The fullstack package",
+        info:"I excel at designing and developing complete websites from scratch. My exceptional design sense and development skills enable me to create impressive projects that stand out."
+    },
 ]

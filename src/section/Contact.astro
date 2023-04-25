@@ -1,0 +1,74 @@
+---
+import footerImg from "../assets/footer.png";
+---
+
+<section class="contact" id="contact" aria-label="contact form">
+  <div class="container">
+    <h2>Let’s work together.</h2>
+    <img src={footerImg} alt=" a illustration with image gif " />
+    <figure class="contact-form">
+      <a href="mailto:m.abirhasan23@gmail.com"> m.abirhasan23@gmail.com</a>
+      <a href="https://wa.me/+8801866032826"> chat on whatsapp</a>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .contact {
+    width: 90%;
+    margin-inline: auto;
+    min-height: 20vh;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h2 {
+    font-size: var(--fs-2xl);
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .contact-form {
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  a {
+    display: inline-block;
+    text-align: center;
+    padding-block: 1rem;
+    font-size: var(--fs-semi);
+    border: 1px solid hsla(var(--clr-accent), 0.2);
+    margin-inline: 1rem;
+    padding: 11px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 3;
+    min-width: 18vw;
+
+    height: 8vh;
+    background-color: transparent;
+  }
+
+  a::after {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 0%;
+    background-color: hsla(var(--clr-accent), 1);
+    z-index: -1;
+    left: 0px;
+    bottom: 0px;
+    border-radius: 10px;
+    transition: width 300ms ease-in-out, height 400ms ease-out;
+    transition-delay: 200ms;
+  }
+  a:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+</style>

@@ -1,7 +1,18 @@
 ---
 import MainLayouts from "../layouts/MainLayouts.astro";
+import AboutIntro from "../section/AboutIntro.astro";
+import Contact from "../section/Contact.astro";
+import MyService from "../section/MyService.astro";
+import Service from "../section/Service.astro";
 ---
 
-<MainLayouts>
-  <h1>This is my about page</h1>
+<MainLayouts title="INTRODUCTION ABOUT ME">
+  <div>
+    <AboutIntro />
+    <!-- <AboutInfo /> -->
+    <MyService />
+    <Service />
+    <!-- <Newsletter /> -->
+    <Contact />
+  </div>
 </MainLayouts>

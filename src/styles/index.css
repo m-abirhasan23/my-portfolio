@@ -97,10 +97,9 @@ h6 {
   /* overflow-wrap: break-word; */
 }
 
-section,
-footer {
-  min-height: 100vh;
-  margin-block: 2em;
+section {
+  /* min-height: 100vh; */
+  margin-block: 4em;
 }
 
 a {

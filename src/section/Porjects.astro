@@ -4,6 +4,9 @@ import { projectsData } from "../data/data";
 ---
 
 <section class="projects" id="projects" aria-label="Projects Section">
+  <div id="cursor">
+    <i id="trailer-icon" class="fa-solid fa-arrow-up-right"></i>
+  </div>
   <h2>Take a look at my latest <span>portfolio projects</span></h2>
   <div class="project-container">
     {projectsData.map((project) => <Project project={project} />)}
@@ -12,9 +15,8 @@ import { projectsData } from "../data/data";
 
 <style>
   .projects {
-    cursor: none;
+    position: relative;
   }
-
   h2 {
     text-align: center;
     font-family: var(--font-secondary);
@@ -29,12 +31,10 @@ import { projectsData } from "../data/data";
   .project-container {
     margin-block: 2rem;
   }
-  .projects:hover > #mouseTrailer {
-    opacity: 1;
-  }
+
   @media (max-width: 600px) {
     h2 {
-      font-size: var(--fs-md);
+      font-size: var(--fs-lg);
     }
   }
 </style>

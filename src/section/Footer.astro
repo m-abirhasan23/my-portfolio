@@ -1,9 +1,7 @@
 ---
-import footerImg from "../assets/footer.png";
 ---
 
 <footer>
-  <img src={footerImg} alt=" a illustration with image gif " />
   <p>{"Abir Hasan ⚡ — Frontend Engineer 🤖"}. All rights reserved</p>
   <nav class="secondary-nav">
     <a href="/about">About</a>
@@ -17,9 +15,11 @@ import footerImg from "../assets/footer.png";
     text-transform: uppercase;
     margin: 0rem auto;
     width: 650px;
-    min-height: 70vh;
-    display: grid;
-    place-items: center;
+    min-height: 30vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
     -webkit-animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1)
       both;
     animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;

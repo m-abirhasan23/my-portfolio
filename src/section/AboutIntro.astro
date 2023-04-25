@@ -1,0 +1,47 @@
+---
+import profilePic from "../assets/Photo.png";
+---
+
+<section class="about-intro">
+  <p>LET'S GET TO KNOW EACH OTHER</p>
+  <h3>A BRIEF INTRODUCTION ABOUT ME</h3>
+  <div>
+    <img src={profilePic} alt="" />
+  </div>
+</section>
+
+<style>
+  .about-intro {
+    width: 90%;
+    margin-inline: auto;
+  }
+
+  p {
+    letter-spacing: 25px;
+    font-size: var(--fs-sm);
+    color: hsl(var(--clr-accent));
+    text-align: center;
+    margin-block: 1.5rem;
+  }
+  h3 {
+    font-size: var(--fs-xl);
+    text-align: center;
+    margin-block: 1.5rem;
+  }
+  img {
+    max-width: 50%;
+    margin: 0 auto;
+    border-radius: 5%;
+  }
+  @media (max-width: 600px) {
+    section {
+      padding-top: 4rem;
+    }
+    h3 {
+      font-size: var(--fs-lg);
+    }
+    img {
+      max-width: 80%;
+    }
+  }
+</style>

@@ -9,7 +9,13 @@ import { navData } from "../data/data.js";
       <div class="logo">Abir Hasan⚡</div>
     </a>
     <nav class="navbar">
-      {navData.map((link) => <a href={link.path}>{link.name}</a>)}
+      {
+        navData.map((link) => (
+          <a href={link.path} id="nav-item">
+            {link.name}
+          </a>
+        ))
+      }
     </nav>
     <div class="menu-btn acive">
       <Hamburger />
@@ -76,7 +82,14 @@ import { navData } from "../data/data.js";
 
   @media (max-width: 600px) {
     header {
-      position: relative;
+      position: fixed;
+      inset: 0;
+      top: 0;
+      width: 100%;
+      height: 120px;
+      background-color: hsl(var(--clr-primary));
+      border: 1px solid hsla(var(--clr-accent), 0.1);
+      z-index: 999;
     }
     .container {
       height: 120px;
@@ -87,14 +100,14 @@ import { navData } from "../data/data.js";
     .navbar {
       flex-direction: column;
       position: absolute;
-      top: 135px;
+      top: 119px;
       justify-content: flex-start;
       align-items: flex-start;
       background-color: hsl(var(--clr-accent));
       width: 100%;
-      left: -100%;
+      left: -101%;
       z-index: 999;
-      height: 50vh;
+      height: 200vh;
       transition: left 300ms ease-in;
     }
     .navbar.active {
@@ -110,6 +123,9 @@ import { navData } from "../data/data.js";
       padding-left: 3.5rem;
       font-weight: 600;
     }
+    .navbar > a:is(:hover, :focus) {
+      color: hsl(var(--clr-primary));
+    }
     a:first-child {
       /* padding-top: 1.5em; */
     }
@@ -123,7 +139,11 @@ import { navData } from "../data/data.js";
   const openMenu = document.querySelector(".openMenu");
   const menuBtn = document.querySelector(".menu-btn");
   const navbar = document.querySelector(".navbar");
+  const navItem = document.querySelector("#nav-item");
   menuBtn.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+  });
+  navItem.addEventListener("click", () => {
     navbar.classList.toggle("active");
   });
 

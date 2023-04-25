@@ -1,0 +1,82 @@
+---
+import { service } from "../data/data";
+---
+
+<section class="my-service">
+  <h4>What I can do for you</h4>
+  <div class="article-container">
+    {
+      service.map((item, index) => (
+        <article>
+          <div class="article-top">
+            <span>0{index + 1}</span>
+            <h5>{item.name}</h5>
+          </div>
+          <p>{item.info}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    width: 90%;
+    margin-inline: auto;
+  }
+  h4 {
+    font-size: var(--fs-xl);
+    margin-block: 2rem;
+    color: hsl(var(--clr-accent));
+    text-align: center;
+
+    text-transform: uppercase;
+  }
+  .article-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  article {
+    width: 32%;
+    padding: 1rem;
+    border: 1px solid hsla(var(--clr-accent), 0.1);
+    border-radius: 10px;
+    transition: border 400ms ease-in-out;
+    cursor: pointer;
+    transition-delay: 0.1s;
+  }
+
+  .article-top {
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: 400;
+    flex-direction: column;
+  }
+  span {
+    border-bottom: 1px solid hsla(var(--clr-accent), 0.1);
+    font-size: var(--fs-semi);
+  }
+  h5 {
+    padding: 0.2rem 0;
+    color: hsl(var(--clr-accent));
+    text-transform: capitalize;
+    font-size: var(--fs-md);
+  }
+  article:hover {
+    border: 1px solid hsla(var(--clr-accent), 0.7);
+  }
+
+  @media (max-width: 600px) {
+    h4 {
+      font-size: var(--fs-lg);
+    }
+    article {
+      width: 100%;
+    }
+  }
+</style>
